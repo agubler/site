@@ -113,7 +113,7 @@ export const registerFileWithBuild = (path: string) => {
 
 export function process(event?: string, filePath?: string) {
 	const manifestPath = resolve('content', 'manifest.json');
-	const buildDetailsPath = resolve('assets', 'generated', 'build.json');
+	const buildDetailsPath = resolve('src', 'generated', 'build.json');
 
 	let buildAll = true;
 	if (event !== undefined && filePath !== undefined) {
@@ -161,7 +161,7 @@ export const processSection = (
 	} else {
 		// Build All
 		info(`${chalk.yellow.bold(' processing ')} ${section}...`);
-		removeSync(join(__dirname, 'assets/generated'));
+		removeSync(join(__dirname, 'src/generated'));
 		manifest[section].map(({ path }: { path: string }) => processMarkdown(path, registeredHandlers));
 		buildSectionList(manifest, section);
 	}
@@ -176,7 +176,7 @@ export const processMarkdown = (path: string, registeredHandlers: { [type: strin
 
 	const nodes = fromMarkdown(content, registeredHandlers);
 
-	const generatedPath = resolve('assets', 'generated', outputPath);
+	const generatedPath = resolve('src', 'generated', outputPath);
 	outputFileSync(generatedPath, `export default ${JSON.stringify(nodes)};`);
 	info(`${chalk.magenta.bold(' generated ')} ${generatedPath}`);
 };
@@ -187,7 +187,7 @@ export const buildSectionList = (manifest: ManifestConfig, section: string): voi
 		name,
 		path: parsePath(path).name
 	}));
-	const listPath = resolve('assets', 'generated', `${section}-list.ts`);
+	const listPath = resolve('src', 'generated', `${section}-list.ts`);
 	outputFileSync(listPath, `export default ${JSON.stringify(paths)};`);
 	info(`${chalk.magenta.bold(' generated ')} ${listPath}`);
 };

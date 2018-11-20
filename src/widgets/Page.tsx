@@ -14,7 +14,7 @@ export default class Page extends WidgetBase<PageParameters> {
 		}
 		import(`./../generated/${path}`).then((module) => {
 			console.log(module);
-			this._cache[path] = module.default();
+			this._cache[path] = module.default;
 			this.invalidate();
 		});
 		return null;
