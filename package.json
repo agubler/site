@@ -22,15 +22,15 @@
     "uploadCoverage": "codecov --file=output/coverage/coverage-final.json"
   },
   "dependencies": {
-    "@dojo/framework": "file:deps/dojo-framework-4.0.1-pre.tgz",
+    "@dojo/framework": "file:./deps/dojo-framework-4.0.5.tgz",
     "tslib": "~1.8.1"
   },
   "devDependencies": {
     "@dojo/cli": "^4.0.0",
-    "@dojo/cli-build-app": "file:deps/dojo-cli-build-app-4.0.4-pre.tgz",
+    "@dojo/cli-build-app": "file:./deps/dojo-cli-build-app-4.0.5.tgz",
     "@dojo/cli-test-intern": "^4.0.0",
     "@dojo/scripts": "^3.1.0",
-    "@dojo/webpack-contrib": "file:deps/dojo-webpack-contrib-4.0.3-pre.tgz",
+    "@dojo/webpack-contrib": "file:./deps/dojo-webpack-contrib-4.0.5.tgz",
     "@mapbox/rehype-prism": "^0.3.0",
     "@types/fs-extra": "^5.0.4",
     "@types/mockery": "^1.4.29",

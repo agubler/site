@@ -1,6 +1,3 @@
-// @ts-ignore
-__webpack_public_path__ = `${window.location.origin}/`;
-
 import renderer from '@dojo/framework/widget-core/vdom';
 import Registry from '@dojo/framework/widget-core/Registry';
 import { tsx } from '@dojo/framework/widget-core/tsx';
